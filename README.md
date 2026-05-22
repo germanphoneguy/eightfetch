@@ -7,8 +7,10 @@
     <a href="#-usage"><strong>Usage</strong></a>
   </p>
 
-```text
-                    -'                    ╭────────────────────────────────────────╮
+  <table>
+    <tr>
+      <td align="left">
+        <pre>                    -'                    ╭────────────────────────────────────────╮
                   .o+'                    │ OS: Arch Linux                         │
                  'ooo/                    │ Kernel: Linux 6.18.32-1-lts            │
                 '+oooo:                   │ Device: Alienware 16 Aurora AC16250    │
@@ -26,8 +28,10 @@
     '/ossssso+/:-        -:/+osssso+-     ╰────────────────────────────────────────╯
    '+sso+:-'                  '.-/+oso:
   '++:.                           '-/+/
-  .'                                 '
-```
+  .'                                 '</pre>
+      </td>
+    </tr>
+  </table>
 </div>
 
 ---
