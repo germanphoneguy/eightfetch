@@ -111,15 +111,15 @@ cp target/release/eightfetch ~/.cargo/bin/8fetch
 
 eightfetch avoids subprocess spam(like the deprecated `myfetch(C port)` is doing) by reading directly from sysfs and procfs:
 
-- **OS info** — `/etc/os-release` (one read, 4 fields parsed)
-- **Kernel** — `/proc/sys/kernel/osrelease` (file read, no `uname`)
-- **GPU** — driver-based sysfs scan via `/sys/bus/pci/drivers/*/` (no `lspci`)
-- **CPU** — `/proc/cpuinfo` (already read for virt detection, shared)
-- **RAM** — `/proc/meminfo`
-- **Disk** — `statvfs()` syscall (no `df` subprocess)
-- **Packages** — `readdir("/var/lib/pacman/local/")` (no `pacman -Q`)
-- **Shell/Terminal/DE** — Environment variables only
-- **Resolution** — `hyprctl monitors` (fastest available for Wayland)
+- **OS info** - `/etc/os-release` (one read, 4 fields parsed)
+- **Kernel** - `/proc/sys/kernel/osrelease` (file read, no `uname`)
+- **GPU** - driver-based sysfs scan via `/sys/bus/pci/drivers/*/` (no `lspci`)
+- **CPU** - `/proc/cpuinfo` (already read for virt detection, shared)
+- **RAM** - `/proc/meminfo`
+- **Disk** - `statvfs()` syscall (no `df` subprocess)
+- **Packages** - `readdir("/var/lib/pacman/local/")` (no `pacman -Q`)
+- **Shell/Terminal/DE** - Environment variables only
+- **Resolution** - `hyprctl monitors` (fastest available for Wayland)
 
 Only **one** subprocess per run: `hyprctl monitors` :)
 
