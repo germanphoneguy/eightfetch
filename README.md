@@ -47,6 +47,7 @@
 | **eightfetch**       | **11.5 ms** | **go brr(sorry my humor is bad)** |
 
 > Since i want to be honest, here is how it performed on Pop!_OS:
+
 | tool                 | time        | comparision     |
 |----------------------|-------------|-----------------|
 | **fastfetch**        | 50.1 ms     | - |
