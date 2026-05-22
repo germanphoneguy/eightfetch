@@ -6,27 +6,27 @@
     <a href="#-install"><strong>Install</strong></a> ·
     <a href="#-usage"><strong>Usage</strong></a>
   </p>
-  <pre>
-                   -'                   ╭────────────────────────────────────────╮
-                  .o+'                  │ OS: Arch Linux                         │
-                 'ooo/                  │ Kernel: Linux 6.18.32-1-lts            │
-                '+oooo:                 │ Device: Alienware 16 Aurora AC16250    │
-               '+oooooo:                │ Uptime: 2h 23m                         │
-               -+oooooo+:               │ Packages: 697 (pacman)                 │
-             '/:-:++oooo+:              │ Shell: fish                            │
-            '/++++/+++++++:             │ DE: Hyprland                           │
-           '/++++++++++++++:            │ Terminal: xterm-kitty                  │
-          '/+++ooooooooooooo/'          │ Resolution: 2560x1600                  │
-         ./ooosssso++osssssso+'         │ CPU: Intel(R) Core(TM) 7 240H          │
-        .oossssso-''''/ossssss+'        │ GPU: Intel Graphics                    │
-       -osssssso.      :ssssssso.       │ GPU-2: GeForce RTX 5060 Max-Q / Mobile │
-      :osssssss/        osssso+++.      │ RAM: 3.6 GiB / 31.0 GiB                │
-     /ossssssss/        +ssssooo/-      │ Disk (/): 67GiB / 937GiB (7%)          │
-   '/ossssso+/:-        -:/+osssso+-    ╰────────────────────────────────────────╯
-  '+sso+:-'                 '.-/+oso:   
- '++:.                           '-/+/  
- .'                                 '   
-  </pre>
+
+```text
+                    -'                    ╭────────────────────────────────────────╮
+                  .o+'                    │ OS: Arch Linux                         │
+                 'ooo/                    │ Kernel: Linux 6.18.32-1-lts            │
+                '+oooo:                   │ Device: Alienware 16 Aurora AC16250    │
+               '+oooooo:                  │ Uptime: 2h 23m                         │
+               -+oooooo+:                 │ Packages: 697 (pacman)                 │
+             '/:-:++oooo+:                │ Shell: fish                            │
+            '/++++/+++++++:               │ DE: Hyprland                           │
+           '/++++++++++++++:              │ Terminal: xterm-kitty                  │
+          '/+++ooooooooooooo/'            │ Resolution: 2560x1600                  │
+         ./ooosssso++osssssso+'           │ CPU: Intel(R) Core(TM) 7 240H          │
+        .oossssso-''''/ossssss+'          │ GPU: Intel Graphics                    │
+       -osssssso.      :ssssssso.         │ GPU-2: GeForce RTX 5060 Max-Q / Mobile │
+      :osssssss/        osssso+++.        │ RAM: 3.6 GiB / 31.0 GiB                │
+     /ossssssss/        +ssssooo/-        │ Disk (/): 67GiB / 937GiB (7%)          │
+    '/ossssso+/:-        -:/+osssso+-     ╰────────────────────────────────────────╯
+   '+sso+:-'                  '.-/+oso:
+  '++:.                           '-/+/
+  .'                                 '
 </div>
 
 ---
