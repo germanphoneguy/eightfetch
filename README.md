@@ -40,9 +40,9 @@
 
 | tool                 | time        | comparision     |
 |----------------------|-------------|-----------------|
-| **myfetch (C port)** | 725 ms      | **63× slower**  |
-| **fastfetch**        | 27.7 ms     | **2.4× slower** |
-| **eightfetch**       | **11.5 ms** | **go brr** |
+| **myfetch (C port)** | 725 ms      | **63x slower**  |
+| **fastfetch**        | 27.7 ms     | **2.4x slower** |
+| **eightfetch**       | **11.5 ms** | **go brr(sorry my humor is bad)** |
 
 ```
 $ hyperfine myfetch
@@ -55,7 +55,7 @@ $ hyperfine 8fetch
   Time (mean ± σ):      11.5 ms ±  1.3 ms  [User: 6.9 ms, System: 4.4 ms]
 ```
 
-eightfetch is **~63× faster** than the original `myfetch(C port)`, and **~2.4× faster** than `fastfetch`; all while using **zero external dependencies** (pure Rust stdlib)!!
+eightfetch is **~63x faster** than the original `myfetch(C port)`, and **~2.4x faster** than `fastfetch`; all while using **zero external dependencies** (pure Rust stdlib)!!
 
 ---
 
