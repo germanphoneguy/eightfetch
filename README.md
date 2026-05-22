@@ -42,7 +42,7 @@
 |----------------------|-------------|-----------------|
 | **myfetch (C port)** | 725 ms      | **63× slower**  |
 | **fastfetch**        | 27.7 ms     | **2.4× slower** |
-| **eightfetch**       | **11.5 ms** | **— (fastest)** |
+| **eightfetch**       | **11.5 ms** | **go brr** |
 
 ```
 $ hyperfine myfetch
@@ -55,7 +55,7 @@ $ hyperfine 8fetch
   Time (mean ± σ):      11.5 ms ±  1.3 ms  [User: 6.9 ms, System: 4.4 ms]
 ```
 
-eightfetch is **~63× faster** than the original C shell-scripting-based `myfetch`, and **~2.4× faster** than `fastfetch` — all while using **zero external dependencies** (pure Rust stdlib).
+eightfetch is **~63× faster** than the original `myfetch(C port)`, and **~2.4× faster** than `fastfetch`; all while using **zero external dependencies** (pure Rust stdlib)!!
 
 ---
 
@@ -73,21 +73,21 @@ Then run:
 8fetch
 ```
 
-### Manually (build + copy)
+### manually (build + copy)
 
 ```bash
-# Clone
+# clone
 git clone https://github.com/quinnyfoco-design/eightfetch.git
 cd eightfetch
 
-# Build (optimized release)
+# build
 cargo build --release
 
-# Copy to PATH
+# copy to PATH
 cp target/release/eightfetch ~/.cargo/bin/8fetch
 # or: sudo cp target/release/eightfetch /usr/local/bin/8fetch
 
-# Run it
+# run it
 8fetch
 ```
 
@@ -109,7 +109,7 @@ cp target/release/eightfetch ~/.cargo/bin/8fetch
 
 ## how it works
 
-eightfetch avoids subprocess spam(like the deprecated `myfetch` is doing) by reading directly from sysfs and procfs:
+eightfetch avoids subprocess spam(like the deprecated `myfetch(C port)` is doing) by reading directly from sysfs and procfs:
 
 - **OS info** — `/etc/os-release` (one read, 4 fields parsed)
 - **Kernel** — `/proc/sys/kernel/osrelease` (file read, no `uname`)
