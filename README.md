@@ -2,9 +2,9 @@
   <h1>eightfetch</h1>
   <p><strong>Blazing fast system fetch tool — Rust port of <code>myfetch</code></strong></p>
   <p>
-    <a href="#-benchmarks"><strong>Benchmarks</strong></a> ·
-    <a href="#-install"><strong>Install</strong></a> ·
-    <a href="#-usage"><strong>Usage</strong></a>
+    <a href="#-benchmarks"><strong>benchmarks</strong></a> ·
+    <a href="#-install"><strong>install</strong></a> ·
+    <a href="#-usage"><strong>usage</strong></a>
   </p>
 
   <table>
