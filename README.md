@@ -82,6 +82,12 @@ Then run:
 8fetch
 ```
 
+### Via AUR
+
+```
+yay -S 8fetch
+```
+
 ### manually (build + copy)
 
 ```bash
