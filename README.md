@@ -86,7 +86,7 @@ Then run:
 
 ```bash
 # clone
-git clone https://github.com/quinnyfoco-design/eightfetch.git
+git clone https://github.com/germanphoneguy/eightfetch.git
 cd eightfetch
 
 # build
@@ -112,6 +112,9 @@ cp target/release/8fetch ~/.cargo/bin/8fetch
 
 # custom hex color
 8fetch --color:5f5f5f
+
+# machine-readable JSON (zero dep, no extra skips)
+8fetch --json
 ```
 
 ---

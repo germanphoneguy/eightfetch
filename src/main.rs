@@ -1226,10 +1226,12 @@ fn vis_len(s: &str) -> usize {
 fn main() {
     let args: Vec<String> = env::args().collect();
     let mut grey = false;
+    let mut json = false;
     let mut color_hex: Option<&str> = None;
 
     for arg in &args[1..] {
         if arg == "--grey" { grey = true; }
+        if arg == "--json" { json = true; }
         if let Some(hex) = arg.strip_prefix("--color:") { color_hex = Some(hex); }
     }
 
@@ -1305,6 +1307,11 @@ fn main() {
         is_android,
     };
 
+    if json {
+        print_json(&info);
+        return;
+    }
+
     let label_color = choose_label_color(
         &info.distro_id, &info.distro_base, &colors, info.is_proxmox, info.is_android
     );
@@ -1362,6 +1369,51 @@ fn main() {
         println!("{}{:pad$}{}", left, "", right, pad=pad);
     }
     println!();
+}
+
+fn escape_json(s: &str) -> String {
+    let mut out = String::with_capacity(s.len() + 2);
+    out.push('"');
+    for c in s.chars() {
+        match c {
+            '"' => out.push_str("\\\""),
+            '\\' => out.push_str("\\\\"),
+            '\n' => out.push_str("\\n"),
+            '\r' => out.push_str("\\r"),
+            '\t' => out.push_str("\\t"),
+            c if c.is_control() => {
+                let _ = write!(out, "\\u{:04x}", c as u32);
+            }
+            c => out.push(c),
+        }
+    }
+    out.push('"');
+    out
+}
+
+fn print_json(info: &SysInfo) {
+    let mut j = String::new();
+    j.push('{');
+    j.push_str(&format!("\"os\":{},", escape_json(&info.os)));
+    j.push_str(&format!("\"kernel\":{},", escape_json(&info.kernel)));
+    j.push_str(&format!("\"device\":{},", escape_json(&info.device)));
+    j.push_str(&format!("\"uptime\":{},", escape_json(&info.uptime)));
+    j.push_str(&format!("\"packages\":{},", escape_json(&info.packages)));
+    j.push_str(&format!("\"shell\":{},", escape_json(&info.shell)));
+    j.push_str(&format!("\"terminal\":{},", escape_json(&info.terminal)));
+    j.push_str(&format!("\"de\":{},", escape_json(&info.de)));
+    j.push_str(&format!("\"wm\":{},", escape_json(&info.wm)));
+    j.push_str(&format!("\"resolution\":{},", escape_json(&info.disp1)));
+    j.push_str(&format!("\"resolution_2\":{},", escape_json(&info.disp2)));
+    j.push_str(&format!("\"cpu\":{},", escape_json(&info.cpu)));
+    j.push_str(&format!("\"gpu\":{},", escape_json(&info.gpu)));
+    j.push_str(&format!("\"gpu_2\":{},", escape_json(&info.gpu2)));
+    j.push_str(&format!("\"ram\":{},", escape_json(&info.ram)));
+    j.push_str(&format!("\"disk\":{},", escape_json(&info.disk)));
+    j.push_str(&format!("\"virtualization\":{},", escape_json(&info.virt)));
+    j.push_str(&format!("\"container\":{}", escape_json(&info.container)));
+    j.push('}');
+    println!("{}", j);
 }
 
 const LEFT_WIDTH: usize = 40;
