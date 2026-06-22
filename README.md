@@ -53,6 +53,13 @@
 | **fastfetch**        | 50.1 ms     | - |
 | **eightfetch**       | **9.4 ms** | **~5.3x faster** |
 
+> atp im just distro flexxing but here is how it performned on NixOS:
+
+| tool                 | time        | comparision     |
+|----------------------|-------------|-----------------|
+| **fastfetch**        | 179.6 ms    | - |
+| **eightfetch**       | **617.6 µs** | **290.8x faster** |
+
 ```
 $ hyperfine myfetch
   Time (mean ± σ):     725.4 ms ± 78.9 ms  [User: 103.9 ms, System: 164.3 ms]
