@@ -57,9 +57,12 @@
 
 | tool                 | time        | comparision     |
 |----------------------|-------------|-----------------|
-| **fastfetch**        | 179.6 ms    | - |
-| **eightfetch**       | **617.6 µs** | **290.8x faster** |
+| **myfetch (C port)** | 497.8 ms    | **~3,548x slower** |
+| **fastfetch**        | 141.9 ms    | **~1,011x slower** |
+| **eightfetch**       | **140.3 µs** | - |
 
+
+Arch:
 ```
 $ hyperfine myfetch
   Time (mean ± σ):     725.4 ms ± 78.9 ms  [User: 103.9 ms, System: 164.3 ms]
@@ -70,6 +73,22 @@ $ hyperfine fastfetch
 $ hyperfine 8fetch
   Time (mean ± σ):       3.4 ms ±   2.4 ms    [User: 1.8 ms, System: 2.4 ms]
 ```
+NixOS:
+```
+$ hyperfine myfetch
+  Time (mean ± σ):     497.8 ms ± 781.6 ms    [User: 75.5 ms, System: 280.1 ms]
+
+$ hyperfine fastfetch
+  Time (mean ± σ):     141.9 ms ±  18.2 ms    [User: 79.0 ms, System: 52.0 ms]
+
+$ hyperfine 8fetch
+  Time (mean ± σ):      69.7 µs ± 305.8 µs    [User: 83.5 µs, System: 403.9 µs]
+
+$ hyperfine 8fetch # second test
+  Time (mean ± σ):     140.3 µs ± 442.7 µs    [User: 86.9 µs, System: 458.9 µs]
+```
+> IMPORTANT: these are not copy-pasted from the terminal, i stripped away unnesesary stuff.
+> the tool is so fast that, on Arch and Nix, `hyperfine` warns that it cannot calibrate the shell startup time!!
 
 eightfetch is **~213.4x faster** than the original `myfetch(C port)`, and **~8.1x faster** than `fastfetch`; all while using **zero external dependencies** (pure Rust stdlib)!!
 
