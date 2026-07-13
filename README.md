@@ -1,3 +1,7 @@
+> ![IMPORTANT]
+> I will not be maintaing this project anymore, at all. You are fully free to fork and redistribute it.
+
+
 <div align="center">
   <h1>eightfetch</h1>
   <p><strong>Blazing fast system fetch tool — Rust port of <code>myfetch</code></strong></p>
